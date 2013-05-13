@@ -17,6 +17,10 @@ SHAMROCK_EXPAND_DATADIR
 
 AC_PROG_INSTALL
 
+AC_PATH_PROG(GMCS, gmcs, no)
+if test "x$GMCS" = "xno"; then
+        AC_MSG_ERROR([gmcs Not found])
+fi
 AC_PATH_PROG(DMCS, dmcs, no)
 if test "x$DMCS" = "xno"; then
         AC_MSG_ERROR([dmcs Not found])
@@ -68,6 +72,8 @@ dnl package checks, per config
 
 
 AC_CONFIG_FILES([
+External/SharpZipLib/src/icsharpcode.sharpzlib.pc
+External/SharpZipLib/src/Makefile
 Sharpen/sharpen.pc
 Sharpen/Makefile
 Sharpen.Test/sharpen.test.pc

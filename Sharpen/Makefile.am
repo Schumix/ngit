@@ -9,12 +9,15 @@ ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -unsafe -warn:4 -optimize- -
 ASSEMBLY = ../bin/Sharpen.dll
 ASSEMBLY_MDB = $(ASSEMBLY).mdb
 COMPILE_TARGET = library
-PROJECT_REFERENCES = 
+PROJECT_REFERENCES =  \
+	../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
 BUILD_DIR = ../bin
 
 SHARPEN_DLL_MDB_SOURCE=../bin/Sharpen.dll.mdb
 SHARPEN_DLL_MDB=$(BUILD_DIR)/Sharpen.dll.mdb
-ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../Dependencies/ICSharpCode.SharpZipLib.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_MDB_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll.mdb
+ICSHARPCODE_SHARPZIPLIB_DLL_MDB=$(BUILD_DIR)/ICSharpCode.SharpZipLib.dll.mdb
 
 endif
 
@@ -24,11 +27,13 @@ ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -unsafe -warn:4 -optimize-
 ASSEMBLY = ../bin/Sharpen.dll
 ASSEMBLY_MDB = 
 COMPILE_TARGET = library
-PROJECT_REFERENCES = 
+PROJECT_REFERENCES =  \
+	../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
 BUILD_DIR = ../bin
 
 SHARPEN_DLL_MDB=
-ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../Dependencies/ICSharpCode.SharpZipLib.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_MDB=
 
 endif
 
@@ -38,12 +43,15 @@ ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -unsafe -warn:4 -optimize- -
 ASSEMBLY = ../bin/Sharpen.dll
 ASSEMBLY_MDB = $(ASSEMBLY).mdb
 COMPILE_TARGET = library
-PROJECT_REFERENCES = 
+PROJECT_REFERENCES =  \
+	../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
 BUILD_DIR = ../bin
 
 SHARPEN_DLL_MDB_SOURCE=../bin/Sharpen.dll.mdb
 SHARPEN_DLL_MDB=$(BUILD_DIR)/Sharpen.dll.mdb
-ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../Dependencies/ICSharpCode.SharpZipLib.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_MDB_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll.mdb
+ICSHARPCODE_SHARPZIPLIB_DLL_MDB=$(BUILD_DIR)/ICSharpCode.SharpZipLib.dll.mdb
 
 endif
 
@@ -53,11 +61,13 @@ ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -unsafe -warn:4 -optimize-
 ASSEMBLY = ../bin/Sharpen.dll
 ASSEMBLY_MDB = 
 COMPILE_TARGET = library
-PROJECT_REFERENCES = 
+PROJECT_REFERENCES =  \
+	../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
 BUILD_DIR = ../bin
 
 SHARPEN_DLL_MDB=
-ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../Dependencies/ICSharpCode.SharpZipLib.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_MDB=
 
 endif
 
@@ -66,7 +76,8 @@ SATELLITE_ASSEMBLY_NAME=$(notdir $(basename $(ASSEMBLY))).resources.dll
 
 PROGRAMFILES = \
 	$(SHARPEN_DLL_MDB) \
-	$(ICSHARPCODE_SHARPZIPLIB_DLL)  
+	$(ICSHARPCODE_SHARPZIPLIB_DLL) \
+	$(ICSHARPCODE_SHARPZIPLIB_DLL_MDB)  
 
 LINUX_PKGCONFIG = \
 	$(SHARPEN_PC)  
@@ -209,8 +220,7 @@ REFERENCES =  \
 	System.Core \
 	System.Web
 
-DLL_REFERENCES =  \
-	../Dependencies/ICSharpCode.SharpZipLib.dll
+DLL_REFERENCES = 
 
 CLEANFILES = $(PROGRAMFILES) $(LINUX_PKGCONFIG) 
 
@@ -220,6 +230,7 @@ ICSHARPCODE_SHARPZIPLIB_DLL = $(BUILD_DIR)/ICSharpCode.SharpZipLib.dll
 SHARPEN_PC = $(BUILD_DIR)/sharpen.pc
 
 $(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL))
+$(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL_MDB))
 $(eval $(call emit-deploy-wrapper,SHARPEN_PC,sharpen.pc))
 
 

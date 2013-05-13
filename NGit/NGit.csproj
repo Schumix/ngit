@@ -33,9 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>..\Dependencies\ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
@@ -600,6 +597,10 @@
     <ProjectReference Include="..\NSch\NSch.csproj">
       <Project>{A19E6F3F-A25B-4B01-8922-CF0CC35C781D}</Project>
       <Name>NSch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\External\SharpZipLib\src\ICSharpCode.SharpZLib.csproj">
+      <Project>{0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD}</Project>
+      <Name>ICSharpCode.SharpZLib</Name>
     </ProjectReference>
   </ItemGroup>
   <ProjectExtensions>

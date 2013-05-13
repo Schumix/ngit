@@ -11,7 +11,8 @@ ASSEMBLY_MDB = $(ASSEMBLY).mdb
 COMPILE_TARGET = library
 PROJECT_REFERENCES =  \
 	../bin/Sharpen.dll \
-	../bin/NSch.dll
+	../bin/NSch.dll \
+	../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
 BUILD_DIR = ../bin
 
 NGIT_DLL_MDB_SOURCE=../bin/NGit.dll.mdb
@@ -19,7 +20,9 @@ NGIT_DLL_MDB=$(BUILD_DIR)/NGit.dll.mdb
 SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
 SHARPEN_DLL_MDB_SOURCE=../bin/Sharpen.dll.mdb
 SHARPEN_DLL_MDB=$(BUILD_DIR)/Sharpen.dll.mdb
-ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../Dependencies/ICSharpCode.SharpZipLib.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_MDB_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll.mdb
+ICSHARPCODE_SHARPZIPLIB_DLL_MDB=$(BUILD_DIR)/ICSharpCode.SharpZipLib.dll.mdb
 NSCH_DLL_SOURCE=../bin/NSch.dll
 NSCH_DLL_MDB_SOURCE=../bin/NSch.dll.mdb
 NSCH_DLL_MDB=$(BUILD_DIR)/NSch.dll.mdb
@@ -34,13 +37,15 @@ ASSEMBLY_MDB =
 COMPILE_TARGET = library
 PROJECT_REFERENCES =  \
 	../bin/Sharpen.dll \
-	../bin/NSch.dll
+	../bin/NSch.dll \
+	../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
 BUILD_DIR = ../bin
 
 NGIT_DLL_MDB=
 SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
 SHARPEN_DLL_MDB=
-ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../Dependencies/ICSharpCode.SharpZipLib.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_MDB=
 NSCH_DLL_SOURCE=../bin/NSch.dll
 NSCH_DLL_MDB=
 
@@ -54,7 +59,8 @@ ASSEMBLY_MDB = $(ASSEMBLY).mdb
 COMPILE_TARGET = library
 PROJECT_REFERENCES =  \
 	../bin/Sharpen.dll \
-	../bin/NSch.dll
+	../bin/NSch.dll \
+	../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
 BUILD_DIR = ../bin
 
 NGIT_DLL_MDB_SOURCE=../bin/NGit.dll.mdb
@@ -62,7 +68,9 @@ NGIT_DLL_MDB=$(BUILD_DIR)/NGit.dll.mdb
 SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
 SHARPEN_DLL_MDB_SOURCE=../bin/Sharpen.dll.mdb
 SHARPEN_DLL_MDB=$(BUILD_DIR)/Sharpen.dll.mdb
-ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../Dependencies/ICSharpCode.SharpZipLib.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_MDB_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll.mdb
+ICSHARPCODE_SHARPZIPLIB_DLL_MDB=$(BUILD_DIR)/ICSharpCode.SharpZipLib.dll.mdb
 NSCH_DLL_SOURCE=../bin/NSch.dll
 NSCH_DLL_MDB_SOURCE=../bin/NSch.dll.mdb
 NSCH_DLL_MDB=$(BUILD_DIR)/NSch.dll.mdb
@@ -77,13 +85,15 @@ ASSEMBLY_MDB =
 COMPILE_TARGET = library
 PROJECT_REFERENCES =  \
 	../bin/Sharpen.dll \
-	../bin/NSch.dll
+	../bin/NSch.dll \
+	../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
 BUILD_DIR = ../bin
 
 NGIT_DLL_MDB=
 SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
 SHARPEN_DLL_MDB=
-ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../Dependencies/ICSharpCode.SharpZipLib.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_MDB=
 NSCH_DLL_SOURCE=../bin/NSch.dll
 NSCH_DLL_MDB=
 
@@ -97,6 +107,7 @@ PROGRAMFILES = \
 	$(SHARPEN_DLL) \
 	$(SHARPEN_DLL_MDB) \
 	$(ICSHARPCODE_SHARPZIPLIB_DLL) \
+	$(ICSHARPCODE_SHARPZIPLIB_DLL_MDB) \
 	$(NSCH_DLL) \
 	$(NSCH_DLL_MDB)  
 
@@ -670,8 +681,7 @@ REFERENCES =  \
 	System \
 	System.Core
 
-DLL_REFERENCES =  \
-	../Dependencies/ICSharpCode.SharpZipLib.dll
+DLL_REFERENCES = 
 
 CLEANFILES = $(PROGRAMFILES) $(LINUX_PKGCONFIG) 
 
@@ -683,6 +693,7 @@ NSCH_DLL = $(BUILD_DIR)/NSch.dll
 NGIT_PC = $(BUILD_DIR)/ngit.pc
 
 $(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL))
+$(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL_MDB))
 $(eval $(call emit-deploy-wrapper,NGIT_PC,ngit.pc))
 
 
