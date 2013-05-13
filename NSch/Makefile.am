@@ -21,6 +21,7 @@ SHARPEN_DLL_MDB=$(BUILD_DIR)/Sharpen.dll.mdb
 ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
 ICSHARPCODE_SHARPZIPLIB_DLL_MDB_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll.mdb
 ICSHARPCODE_SHARPZIPLIB_DLL_MDB=$(BUILD_DIR)/ICSharpCode.SharpZipLib.dll.mdb
+MONO_SECURITY_DLL_SOURCE=../Dependencies/Mono.Security.dll
 
 endif
 
@@ -39,6 +40,7 @@ SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
 SHARPEN_DLL_MDB=
 ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
 ICSHARPCODE_SHARPZIPLIB_DLL_MDB=
+MONO_SECURITY_DLL_SOURCE=../Dependencies/Mono.Security.dll
 
 endif
 
@@ -50,7 +52,8 @@ PROGRAMFILES = \
 	$(SHARPEN_DLL) \
 	$(SHARPEN_DLL_MDB) \
 	$(ICSHARPCODE_SHARPZIPLIB_DLL) \
-	$(ICSHARPCODE_SHARPZIPLIB_DLL_MDB)  
+	$(ICSHARPCODE_SHARPZIPLIB_DLL_MDB) \
+	$(MONO_SECURITY_DLL)  
 
 LINUX_PKGCONFIG = \
 	$(NSCH_PC)  
@@ -233,10 +236,10 @@ EXTRAS = \
 	nsch.pc.in 
 
 REFERENCES =  \
-	System \
-	Mono.Security
+	System
 
-DLL_REFERENCES = 
+DLL_REFERENCES =  \
+	../Dependencies/Mono.Security.dll
 
 CLEANFILES = $(PROGRAMFILES) $(LINUX_PKGCONFIG) 
 
@@ -244,10 +247,12 @@ include $(top_srcdir)/Makefile.include
 
 SHARPEN_DLL = $(BUILD_DIR)/Sharpen.dll
 ICSHARPCODE_SHARPZIPLIB_DLL = $(BUILD_DIR)/ICSharpCode.SharpZipLib.dll
+MONO_SECURITY_DLL = $(BUILD_DIR)/Mono.Security.dll
 NSCH_PC = $(BUILD_DIR)/nsch.pc
 
 $(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL))
 $(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL_MDB))
+$(eval $(call emit-deploy-target,MONO_SECURITY_DLL))
 $(eval $(call emit-deploy-wrapper,NSCH_PC,nsch.pc))
 
 
