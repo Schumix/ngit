@@ -43,22 +43,6 @@ AM_CONDITIONAL(ENABLE_RELEASE, test x$enable_release = xyes)
 if test "x$enable_release" = "xyes" ; then
 	CONFIG_REQUESTED="yes"
 fi
-AC_ARG_ENABLE(debugwin,
-	AC_HELP_STRING([--enable-debugwin],
-		[Use 'DEBUGWIN' Configuration [default=NO]]),
-		enable_debugwin=yes, enable_debugwin=no)
-AM_CONDITIONAL(ENABLE_DEBUGWIN, test x$enable_debugwin = xyes)
-if test "x$enable_debugwin" = "xyes" ; then
-	CONFIG_REQUESTED="yes"
-fi
-AC_ARG_ENABLE(releasewin,
-	AC_HELP_STRING([--enable-releasewin],
-		[Use 'RELEASEWIN' Configuration [default=NO]]),
-		enable_releasewin=yes, enable_releasewin=no)
-AM_CONDITIONAL(ENABLE_RELEASEWIN, test x$enable_releasewin = xyes)
-if test "x$enable_releasewin" = "xyes" ; then
-	CONFIG_REQUESTED="yes"
-fi
 if test -z "$CONFIG_REQUESTED" ; then
 	AM_CONDITIONAL(ENABLE_RELEASE, true)
 	enable_release=yes

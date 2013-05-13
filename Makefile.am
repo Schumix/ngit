@@ -8,9 +8,3 @@ endif
 if ENABLE_RELEASE
  SUBDIRS =  External/SharpZipLib/src Sharpen Sharpen.Test Sharpen.Unix NSch NGit NGit.Test
 endif
-if ENABLE_DEBUGWIN
- SUBDIRS =  External/SharpZipLib/src Sharpen Sharpen.Test NSch NGit NGit.Test
-endif
-if ENABLE_RELEASEWIN
- SUBDIRS =  External/SharpZipLib/src Sharpen Sharpen.Test NSch NGit NGit.Test
-endif

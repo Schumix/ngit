@@ -32,35 +32,6 @@ SHARPEN_TEST_DLL_MDB=
 
 endif
 
-if ENABLE_DEBUGWIN
-ASSEMBLY_COMPILER_COMMAND = dmcs
-ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -warn:4 -optimize- -debug "-define:DEBUG"
-ASSEMBLY = ../bin/Sharpen.Test.dll
-ASSEMBLY_MDB = $(ASSEMBLY).mdb
-COMPILE_TARGET = library
-PROJECT_REFERENCES =  \
-	../bin/Sharpen.dll
-BUILD_DIR = ../bin
-
-SHARPEN_TEST_DLL_MDB_SOURCE=../bin/Sharpen.Test.dll.mdb
-SHARPEN_TEST_DLL_MDB=$(BUILD_DIR)/Sharpen.Test.dll.mdb
-
-endif
-
-if ENABLE_RELEASEWIN
-ASSEMBLY_COMPILER_COMMAND = dmcs
-ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -warn:4 -optimize-
-ASSEMBLY = ../bin/Sharpen.Test.dll
-ASSEMBLY_MDB = 
-COMPILE_TARGET = library
-PROJECT_REFERENCES =  \
-	../bin/Sharpen.dll
-BUILD_DIR = ../bin
-
-SHARPEN_TEST_DLL_MDB=
-
-endif
-
 AL=al
 SATELLITE_ASSEMBLY_NAME=$(notdir $(basename $(ASSEMBLY))).resources.dll
 

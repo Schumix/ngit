@@ -51,54 +51,6 @@ NSCH_DLL_MDB=
 
 endif
 
-if ENABLE_DEBUGWIN
-ASSEMBLY_COMPILER_COMMAND = dmcs
-ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -unsafe -warn:4 -optimize- -debug "-define:DEBUG"
-ASSEMBLY = ../bin/NGit.dll
-ASSEMBLY_MDB = $(ASSEMBLY).mdb
-COMPILE_TARGET = library
-PROJECT_REFERENCES =  \
-	../bin/Sharpen.dll \
-	../bin/NSch.dll \
-	../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
-BUILD_DIR = ../bin
-
-NGIT_DLL_MDB_SOURCE=../bin/NGit.dll.mdb
-NGIT_DLL_MDB=$(BUILD_DIR)/NGit.dll.mdb
-SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
-SHARPEN_DLL_MDB_SOURCE=../bin/Sharpen.dll.mdb
-SHARPEN_DLL_MDB=$(BUILD_DIR)/Sharpen.dll.mdb
-ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
-ICSHARPCODE_SHARPZIPLIB_DLL_MDB_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll.mdb
-ICSHARPCODE_SHARPZIPLIB_DLL_MDB=$(BUILD_DIR)/ICSharpCode.SharpZipLib.dll.mdb
-NSCH_DLL_SOURCE=../bin/NSch.dll
-NSCH_DLL_MDB_SOURCE=../bin/NSch.dll.mdb
-NSCH_DLL_MDB=$(BUILD_DIR)/NSch.dll.mdb
-
-endif
-
-if ENABLE_RELEASEWIN
-ASSEMBLY_COMPILER_COMMAND = dmcs
-ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -unsafe -warn:4 -optimize-
-ASSEMBLY = ../bin/NGit.dll
-ASSEMBLY_MDB = 
-COMPILE_TARGET = library
-PROJECT_REFERENCES =  \
-	../bin/Sharpen.dll \
-	../bin/NSch.dll \
-	../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
-BUILD_DIR = ../bin
-
-NGIT_DLL_MDB=
-SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
-SHARPEN_DLL_MDB=
-ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
-ICSHARPCODE_SHARPZIPLIB_DLL_MDB=
-NSCH_DLL_SOURCE=../bin/NSch.dll
-NSCH_DLL_MDB=
-
-endif
-
 AL=al
 SATELLITE_ASSEMBLY_NAME=$(notdir $(basename $(ASSEMBLY))).resources.dll
 
