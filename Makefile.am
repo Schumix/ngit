@@ -1,5 +1,5 @@
 
-EXTRA_DIST =  expansions.m4
+EXTRA_DIST =  expansions.m4 Dependencies/ICSharpCode.SharpZipLib.dll Dependencies/Mono.Posix.dll
 
 #Warning: This is an automatically generated file, do not edit!
 if ENABLE_DEBUG

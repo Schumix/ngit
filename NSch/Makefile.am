@@ -18,6 +18,7 @@ NSCH_DLL_MDB=$(BUILD_DIR)/NSch.dll.mdb
 SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
 SHARPEN_DLL_MDB_SOURCE=../bin/Sharpen.dll.mdb
 SHARPEN_DLL_MDB=$(BUILD_DIR)/Sharpen.dll.mdb
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../Dependencies/ICSharpCode.SharpZipLib.dll
 
 endif
 
@@ -34,6 +35,7 @@ BUILD_DIR = ../bin
 NSCH_DLL_MDB=
 SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
 SHARPEN_DLL_MDB=
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../Dependencies/ICSharpCode.SharpZipLib.dll
 
 endif
 
@@ -52,6 +54,7 @@ NSCH_DLL_MDB=$(BUILD_DIR)/NSch.dll.mdb
 SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
 SHARPEN_DLL_MDB_SOURCE=../bin/Sharpen.dll.mdb
 SHARPEN_DLL_MDB=$(BUILD_DIR)/Sharpen.dll.mdb
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../Dependencies/ICSharpCode.SharpZipLib.dll
 
 endif
 
@@ -68,6 +71,7 @@ BUILD_DIR = ../bin
 NSCH_DLL_MDB=
 SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
 SHARPEN_DLL_MDB=
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../Dependencies/ICSharpCode.SharpZipLib.dll
 
 endif
 
@@ -77,7 +81,8 @@ SATELLITE_ASSEMBLY_NAME=$(notdir $(basename $(ASSEMBLY))).resources.dll
 PROGRAMFILES = \
 	$(NSCH_DLL_MDB) \
 	$(SHARPEN_DLL) \
-	$(SHARPEN_DLL_MDB)  
+	$(SHARPEN_DLL_MDB) \
+	$(ICSHARPCODE_SHARPZIPLIB_DLL)  
 
 LINUX_PKGCONFIG = \
 	$(NSCH_PC)  
@@ -270,8 +275,10 @@ CLEANFILES = $(PROGRAMFILES) $(LINUX_PKGCONFIG)
 include $(top_srcdir)/Makefile.include
 
 SHARPEN_DLL = $(BUILD_DIR)/Sharpen.dll
+ICSHARPCODE_SHARPZIPLIB_DLL = $(BUILD_DIR)/ICSharpCode.SharpZipLib.dll
 NSCH_PC = $(BUILD_DIR)/nsch.pc
 
+$(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL))
 $(eval $(call emit-deploy-wrapper,NSCH_PC,nsch.pc))
 
 

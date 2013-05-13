@@ -51,6 +51,7 @@ NGIT_DLL_MDB=$(BUILD_DIR)/NGit.dll.mdb
 SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
 SHARPEN_DLL_MDB_SOURCE=../bin/Sharpen.dll.mdb
 SHARPEN_DLL_MDB=$(BUILD_DIR)/Sharpen.dll.mdb
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../Dependencies/ICSharpCode.SharpZipLib.dll
 NSCH_DLL_SOURCE=../bin/NSch.dll
 NSCH_DLL_MDB_SOURCE=../bin/NSch.dll.mdb
 NSCH_DLL_MDB=$(BUILD_DIR)/NSch.dll.mdb
@@ -102,6 +103,7 @@ NGIT_DLL_SOURCE=../bin/NGit.dll
 NGIT_DLL_MDB=
 SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
 SHARPEN_DLL_MDB=
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../Dependencies/ICSharpCode.SharpZipLib.dll
 NSCH_DLL_SOURCE=../bin/NSch.dll
 NSCH_DLL_MDB=
 
@@ -155,6 +157,7 @@ NGIT_DLL_MDB=$(BUILD_DIR)/NGit.dll.mdb
 SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
 SHARPEN_DLL_MDB_SOURCE=../bin/Sharpen.dll.mdb
 SHARPEN_DLL_MDB=$(BUILD_DIR)/Sharpen.dll.mdb
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../Dependencies/ICSharpCode.SharpZipLib.dll
 NSCH_DLL_SOURCE=../bin/NSch.dll
 NSCH_DLL_MDB_SOURCE=../bin/NSch.dll.mdb
 NSCH_DLL_MDB=$(BUILD_DIR)/NSch.dll.mdb
@@ -206,6 +209,7 @@ NGIT_DLL_SOURCE=../bin/NGit.dll
 NGIT_DLL_MDB=
 SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
 SHARPEN_DLL_MDB=
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../Dependencies/ICSharpCode.SharpZipLib.dll
 NSCH_DLL_SOURCE=../bin/NSch.dll
 NSCH_DLL_MDB=
 
@@ -220,6 +224,7 @@ PROGRAMFILES = \
 	$(NGIT_DLL_MDB) \
 	$(SHARPEN_DLL) \
 	$(SHARPEN_DLL_MDB) \
+	$(ICSHARPCODE_SHARPZIPLIB_DLL) \
 	$(NSCH_DLL) \
 	$(NSCH_DLL_MDB)  
 
@@ -598,11 +603,11 @@ EXTRAS = \
 
 REFERENCES =  \
 	System \
-	ICSharpCode.SharpZipLib \
 	System.Core \
 	$(NUNIT_LIBS)
 
-DLL_REFERENCES = 
+DLL_REFERENCES =  \
+	../Dependencies/ICSharpCode.SharpZipLib.dll
 
 CLEANFILES = $(PROGRAMFILES) $(PROGRAMFILES_RESOURCES_GLOBAL) $(PROGRAMFILES_RESOURCES_GLOBAL_EXCLUDETEST_SRC) $(LINUX_PKGCONFIG) 
 
@@ -639,6 +644,7 @@ PACK_HUGE_IDX = $(BUILD_DIR)/resources/global/pack-huge.idx
 TEST_STP = $(BUILD_DIR)/resources/global/excludeTest/src/test.stp
 NGIT_DLL = $(BUILD_DIR)/NGit.dll
 SHARPEN_DLL = $(BUILD_DIR)/Sharpen.dll
+ICSHARPCODE_SHARPZIPLIB_DLL = $(BUILD_DIR)/ICSharpCode.SharpZipLib.dll
 NSCH_DLL = $(BUILD_DIR)/NSch.dll
 NGIT_TEST_PC = $(BUILD_DIR)/ngit.test.pc
 
@@ -671,6 +677,7 @@ $(eval $(call emit-deploy-target,PACK_E6D07037CBCF13376308A0A995D1FA48F8F76AAA_P
 $(eval $(call emit-deploy-target,PACKED_REFS))
 $(eval $(call emit-deploy-target,PACK_HUGE_IDX))
 $(eval $(call emit-deploy-target,TEST_STP))
+$(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL))
 $(eval $(call emit-deploy-wrapper,NGIT_TEST_PC,ngit.test.pc))
 
 
