@@ -1,0 +1,125 @@
+
+EXTRA_DIST =  
+
+# Warning: This is an automatically generated file, do not edit!
+
+if ENABLE_DEBUG
+ASSEMBLY_COMPILER_COMMAND = dmcs
+ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -warn:4 -optimize- -debug "-define:DEBUG;"
+ASSEMBLY = ../bin/Sharpen.Unix.dll
+ASSEMBLY_MDB = $(ASSEMBLY).mdb
+COMPILE_TARGET = library
+PROJECT_REFERENCES =  \
+	../bin/Sharpen.dll
+BUILD_DIR = ../bin
+
+SHARPEN_UNIX_DLL_MDB_SOURCE=../bin/Sharpen.Unix.dll.mdb
+SHARPEN_UNIX_DLL_MDB=$(BUILD_DIR)/Sharpen.Unix.dll.mdb
+SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
+SHARPEN_DLL_MDB_SOURCE=../bin/Sharpen.dll.mdb
+SHARPEN_DLL_MDB=$(BUILD_DIR)/Sharpen.dll.mdb
+
+endif
+
+if ENABLE_RELEASE
+ASSEMBLY_COMPILER_COMMAND = dmcs
+ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -warn:4 -optimize+
+ASSEMBLY = ../bin/Sharpen.Unix.dll
+ASSEMBLY_MDB = 
+COMPILE_TARGET = library
+PROJECT_REFERENCES =  \
+	../bin/Sharpen.dll
+BUILD_DIR = ../bin
+
+SHARPEN_UNIX_DLL_MDB=
+SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
+SHARPEN_DLL_MDB=
+
+endif
+
+if ENABLE_DEBUGWIN
+ASSEMBLY_COMPILER_COMMAND = dmcs
+ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -warn:4 -optimize- -debug "-define:DEBUG;"
+ASSEMBLY = ../bin/Sharpen.Unix.dll
+ASSEMBLY_MDB = $(ASSEMBLY).mdb
+COMPILE_TARGET = library
+PROJECT_REFERENCES =  \
+	../bin/Sharpen.dll
+BUILD_DIR = ../bin
+
+SHARPEN_UNIX_DLL_MDB_SOURCE=../bin/Sharpen.Unix.dll.mdb
+SHARPEN_UNIX_DLL_MDB=$(BUILD_DIR)/Sharpen.Unix.dll.mdb
+SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
+SHARPEN_DLL_MDB_SOURCE=../bin/Sharpen.dll.mdb
+SHARPEN_DLL_MDB=$(BUILD_DIR)/Sharpen.dll.mdb
+
+endif
+
+if ENABLE_RELEASEWIN
+ASSEMBLY_COMPILER_COMMAND = dmcs
+ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -warn:4 -optimize+
+ASSEMBLY = ../bin/Sharpen.Unix.dll
+ASSEMBLY_MDB = 
+COMPILE_TARGET = library
+PROJECT_REFERENCES =  \
+	../bin/Sharpen.dll
+BUILD_DIR = ../bin
+
+SHARPEN_UNIX_DLL_MDB=
+SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
+SHARPEN_DLL_MDB=
+
+endif
+
+AL=al
+SATELLITE_ASSEMBLY_NAME=$(notdir $(basename $(ASSEMBLY))).resources.dll
+
+PROGRAMFILES = \
+	$(SHARPEN_UNIX_DLL_MDB) \
+	$(SHARPEN_DLL) \
+	$(SHARPEN_DLL_MDB)  
+
+LINUX_PKGCONFIG = \
+	$(SHARPEN_UNIX_PC)  
+
+
+RESGEN=resgen2
+	
+all: $(ASSEMBLY) $(PROGRAMFILES) $(LINUX_PKGCONFIG) 
+
+FILES = \
+	AssemblyInfo.cs \
+	UnixFileHelper.cs 
+
+DATA_FILES = 
+
+RESOURCES = 
+
+EXTRAS = \
+	sharpen.unix.pc.in 
+
+REFERENCES =  \
+	System \
+	Mono.Posix
+
+DLL_REFERENCES = 
+
+CLEANFILES = $(PROGRAMFILES) $(LINUX_PKGCONFIG) 
+
+include $(top_srcdir)/Makefile.include
+
+SHARPEN_DLL = $(BUILD_DIR)/Sharpen.dll
+SHARPEN_UNIX_PC = $(BUILD_DIR)/sharpen.unix.pc
+
+$(eval $(call emit-deploy-wrapper,SHARPEN_UNIX_PC,sharpen.unix.pc))
+
+
+$(eval $(call emit_resgen_targets))
+$(build_xamlg_list): %.xaml.g.cs: %.xaml
+	xamlg '$<'
+
+$(ASSEMBLY_MDB): $(ASSEMBLY)
+
+$(ASSEMBLY): $(build_sources) $(build_resources) $(build_datafiles) $(DLL_REFERENCES) $(PROJECT_REFERENCES) $(build_xamlg_list) $(build_satellite_assembly_list)
+	mkdir -p $(shell dirname $(ASSEMBLY))
+	$(ASSEMBLY_COMPILER_COMMAND) $(ASSEMBLY_COMPILER_FLAGS) -out:$(ASSEMBLY) -target:$(COMPILE_TARGET) $(build_sources_embed) $(build_resources_embed) $(build_references_ref)

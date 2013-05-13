@@ -1,0 +1,6 @@
+Name: Sharpen.Unix
+Description: Sharpen.Unix
+Version: 0.1
+
+Requires: 
+Libs: -r:@expanded_libdir@/@PACKAGE@/Sharpen.Unix.dll
