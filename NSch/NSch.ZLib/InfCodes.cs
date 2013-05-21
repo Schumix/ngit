@@ -570,7 +570,6 @@ namespace NSch.ZLib
 						z.next_in_index = p;
 						s.write = q;
 						return s.Inflate_flush(z, r);
-						break;
 					}
 				}
 			}

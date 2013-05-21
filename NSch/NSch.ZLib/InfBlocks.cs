@@ -746,7 +746,6 @@ namespace NSch.ZLib
 						z.next_in_index = p;
 						write = q;
 						return Inflate_flush(z, r);
-						break;
 					}
 				}
 			}

@@ -170,7 +170,6 @@ namespace NSch.Jcraft
 					{
 						System.Console.Error.WriteLine("uncompress: inflate returnd " + status);
 						return null;
-						break;
 					}
 				}
 			}

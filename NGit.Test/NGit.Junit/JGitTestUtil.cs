@@ -49,7 +49,6 @@ using NGit.Storage.File;
 using NGit.Util;
 using NUnit.Framework;
 using Sharpen;
-using System.IO;
 
 namespace NGit.Junit
 {
