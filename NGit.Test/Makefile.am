@@ -5,7 +5,7 @@ EXTRA_DIST =
 
 if ENABLE_DEBUG
 ASSEMBLY_COMPILER_COMMAND = dmcs
-ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -warn:4 -optimize- -debug "-define:DEBUG"
+ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -warn:4 -optimize- "-nowarn:78;618;168;414;162;108;472;219;108" -debug "-define:DEBUG"
 ASSEMBLY = ../bin/NGit.Test.dll
 ASSEMBLY_MDB = $(ASSEMBLY).mdb
 COMPILE_TARGET = library
@@ -52,19 +52,19 @@ NGIT_DLL_MDB=$(BUILD_DIR)/NGit.dll.mdb
 SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
 SHARPEN_DLL_MDB_SOURCE=../bin/Sharpen.dll.mdb
 SHARPEN_DLL_MDB=$(BUILD_DIR)/Sharpen.dll.mdb
-ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
-ICSHARPCODE_SHARPZIPLIB_DLL_MDB_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll.mdb
-ICSHARPCODE_SHARPZIPLIB_DLL_MDB=$(BUILD_DIR)/ICSharpCode.SharpZipLib.dll.mdb
 NSCH_DLL_SOURCE=../bin/NSch.dll
 NSCH_DLL_MDB_SOURCE=../bin/NSch.dll.mdb
 NSCH_DLL_MDB=$(BUILD_DIR)/NSch.dll.mdb
 MONO_SECURITY_DLL_SOURCE=../Dependencies/Mono.Security.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_MDB_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll.mdb
+ICSHARPCODE_SHARPZIPLIB_DLL_MDB=$(BUILD_DIR)/ICSharpCode.SharpZipLib.dll.mdb
 
 endif
 
 if ENABLE_RELEASE
 ASSEMBLY_COMPILER_COMMAND = dmcs
-ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -warn:4 -optimize-
+ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -warn:4 -optimize- "-nowarn:78;618;168;414;162;108;472;219;108"
 ASSEMBLY = ../bin/NGit.Test.dll
 ASSEMBLY_MDB = 
 COMPILE_TARGET = library
@@ -108,11 +108,11 @@ NGIT_DLL_SOURCE=../bin/NGit.dll
 NGIT_DLL_MDB=
 SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
 SHARPEN_DLL_MDB=
-ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
-ICSHARPCODE_SHARPZIPLIB_DLL_MDB=
 NSCH_DLL_SOURCE=../bin/NSch.dll
 NSCH_DLL_MDB=
 MONO_SECURITY_DLL_SOURCE=../Dependencies/Mono.Security.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_MDB=
 
 endif
 
@@ -125,11 +125,11 @@ PROGRAMFILES = \
 	$(NGIT_DLL_MDB) \
 	$(SHARPEN_DLL) \
 	$(SHARPEN_DLL_MDB) \
-	$(ICSHARPCODE_SHARPZIPLIB_DLL) \
-	$(ICSHARPCODE_SHARPZIPLIB_DLL_MDB) \
 	$(NSCH_DLL) \
 	$(NSCH_DLL_MDB) \
-	$(MONO_SECURITY_DLL)  
+	$(MONO_SECURITY_DLL) \
+	$(ICSHARPCODE_SHARPZIPLIB_DLL) \
+	$(ICSHARPCODE_SHARPZIPLIB_DLL_MDB)  
 
 PROGRAMFILES_RESOURCES_GLOBAL = \
 	$(DIRCACHE_TESTREMOVEDSUBTREE) \
@@ -546,9 +546,9 @@ PACK_HUGE_IDX = $(BUILD_DIR)/resources/global/pack-huge.idx
 TEST_STP = $(BUILD_DIR)/resources/global/excludeTest/src/test.stp
 NGIT_DLL = $(BUILD_DIR)/NGit.dll
 SHARPEN_DLL = $(BUILD_DIR)/Sharpen.dll
-ICSHARPCODE_SHARPZIPLIB_DLL = $(BUILD_DIR)/ICSharpCode.SharpZipLib.dll
 NSCH_DLL = $(BUILD_DIR)/NSch.dll
 MONO_SECURITY_DLL = $(BUILD_DIR)/Mono.Security.dll
+ICSHARPCODE_SHARPZIPLIB_DLL = $(BUILD_DIR)/ICSharpCode.SharpZipLib.dll
 NGIT_TEST_PC = $(BUILD_DIR)/ngit.test.pc
 
 $(eval $(call emit-deploy-target,DIRCACHE_TESTREMOVEDSUBTREE))
@@ -580,9 +580,9 @@ $(eval $(call emit-deploy-target,PACK_E6D07037CBCF13376308A0A995D1FA48F8F76AAA_P
 $(eval $(call emit-deploy-target,PACKED_REFS))
 $(eval $(call emit-deploy-target,PACK_HUGE_IDX))
 $(eval $(call emit-deploy-target,TEST_STP))
+$(eval $(call emit-deploy-target,MONO_SECURITY_DLL))
 $(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL))
 $(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL_MDB))
-$(eval $(call emit-deploy-target,MONO_SECURITY_DLL))
 $(eval $(call emit-deploy-wrapper,NGIT_TEST_PC,ngit.test.pc))
 
 

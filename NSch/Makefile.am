@@ -5,7 +5,7 @@ EXTRA_DIST =
 
 if ENABLE_DEBUG
 ASSEMBLY_COMPILER_COMMAND = dmcs
-ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -warn:4 -optimize- -debug "-define:DEBUG"
+ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -warn:4 -optimize- "-nowarn:219;168;162;164;675;108;414;659;169" -debug "-define:DEBUG"
 ASSEMBLY = ../bin/NSch.dll
 ASSEMBLY_MDB = $(ASSEMBLY).mdb
 COMPILE_TARGET = library
@@ -15,19 +15,16 @@ BUILD_DIR = ../bin
 
 NSCH_DLL_MDB_SOURCE=../bin/NSch.dll.mdb
 NSCH_DLL_MDB=$(BUILD_DIR)/NSch.dll.mdb
+MONO_SECURITY_DLL_SOURCE=../Dependencies/Mono.Security.dll
 SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
 SHARPEN_DLL_MDB_SOURCE=../bin/Sharpen.dll.mdb
 SHARPEN_DLL_MDB=$(BUILD_DIR)/Sharpen.dll.mdb
-ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
-ICSHARPCODE_SHARPZIPLIB_DLL_MDB_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll.mdb
-ICSHARPCODE_SHARPZIPLIB_DLL_MDB=$(BUILD_DIR)/ICSharpCode.SharpZipLib.dll.mdb
-MONO_SECURITY_DLL_SOURCE=../Dependencies/Mono.Security.dll
 
 endif
 
 if ENABLE_RELEASE
 ASSEMBLY_COMPILER_COMMAND = dmcs
-ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -warn:4 -optimize-
+ASSEMBLY_COMPILER_FLAGS =  -noconfig -codepage:utf8 -warn:4 -optimize- "-nowarn:219;168;162;164;675;108;414;659;169"
 ASSEMBLY = ../bin/NSch.dll
 ASSEMBLY_MDB = 
 COMPILE_TARGET = library
@@ -36,11 +33,9 @@ PROJECT_REFERENCES =  \
 BUILD_DIR = ../bin
 
 NSCH_DLL_MDB=
+MONO_SECURITY_DLL_SOURCE=../Dependencies/Mono.Security.dll
 SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
 SHARPEN_DLL_MDB=
-ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
-ICSHARPCODE_SHARPZIPLIB_DLL_MDB=
-MONO_SECURITY_DLL_SOURCE=../Dependencies/Mono.Security.dll
 
 endif
 
@@ -49,11 +44,9 @@ SATELLITE_ASSEMBLY_NAME=$(notdir $(basename $(ASSEMBLY))).resources.dll
 
 PROGRAMFILES = \
 	$(NSCH_DLL_MDB) \
+	$(MONO_SECURITY_DLL) \
 	$(SHARPEN_DLL) \
-	$(SHARPEN_DLL_MDB) \
-	$(ICSHARPCODE_SHARPZIPLIB_DLL) \
-	$(ICSHARPCODE_SHARPZIPLIB_DLL_MDB) \
-	$(MONO_SECURITY_DLL)  
+	$(SHARPEN_DLL_MDB)  
 
 LINUX_PKGCONFIG = \
 	$(NSCH_PC)  
@@ -245,13 +238,10 @@ CLEANFILES = $(PROGRAMFILES) $(LINUX_PKGCONFIG)
 
 include $(top_srcdir)/Makefile.include
 
-SHARPEN_DLL = $(BUILD_DIR)/Sharpen.dll
-ICSHARPCODE_SHARPZIPLIB_DLL = $(BUILD_DIR)/ICSharpCode.SharpZipLib.dll
 MONO_SECURITY_DLL = $(BUILD_DIR)/Mono.Security.dll
+SHARPEN_DLL = $(BUILD_DIR)/Sharpen.dll
 NSCH_PC = $(BUILD_DIR)/nsch.pc
 
-$(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL))
-$(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL_MDB))
 $(eval $(call emit-deploy-target,MONO_SECURITY_DLL))
 $(eval $(call emit-deploy-wrapper,NSCH_PC,nsch.pc))
 

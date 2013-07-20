@@ -19,9 +19,6 @@ MONO_POSIX_DLL_SOURCE=../Dependencies/Mono.Posix.dll
 SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
 SHARPEN_DLL_MDB_SOURCE=../bin/Sharpen.dll.mdb
 SHARPEN_DLL_MDB=$(BUILD_DIR)/Sharpen.dll.mdb
-ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
-ICSHARPCODE_SHARPZIPLIB_DLL_MDB_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll.mdb
-ICSHARPCODE_SHARPZIPLIB_DLL_MDB=$(BUILD_DIR)/ICSharpCode.SharpZipLib.dll.mdb
 
 endif
 
@@ -39,8 +36,6 @@ SHARPEN_UNIX_DLL_MDB=
 MONO_POSIX_DLL_SOURCE=../Dependencies/Mono.Posix.dll
 SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
 SHARPEN_DLL_MDB=
-ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/ICSharpCode.SharpZipLib.dll
-ICSHARPCODE_SHARPZIPLIB_DLL_MDB=
 
 endif
 
@@ -51,9 +46,7 @@ PROGRAMFILES = \
 	$(SHARPEN_UNIX_DLL_MDB) \
 	$(MONO_POSIX_DLL) \
 	$(SHARPEN_DLL) \
-	$(SHARPEN_DLL_MDB) \
-	$(ICSHARPCODE_SHARPZIPLIB_DLL) \
-	$(ICSHARPCODE_SHARPZIPLIB_DLL_MDB)  
+	$(SHARPEN_DLL_MDB)  
 
 LINUX_PKGCONFIG = \
 	$(SHARPEN_UNIX_PC)  
@@ -86,12 +79,9 @@ include $(top_srcdir)/Makefile.include
 
 MONO_POSIX_DLL = $(BUILD_DIR)/Mono.Posix.dll
 SHARPEN_DLL = $(BUILD_DIR)/Sharpen.dll
-ICSHARPCODE_SHARPZIPLIB_DLL = $(BUILD_DIR)/ICSharpCode.SharpZipLib.dll
 SHARPEN_UNIX_PC = $(BUILD_DIR)/sharpen.unix.pc
 
 $(eval $(call emit-deploy-target,MONO_POSIX_DLL))
-$(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL))
-$(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL_MDB))
 $(eval $(call emit-deploy-wrapper,SHARPEN_UNIX_PC,sharpen.unix.pc))
 
 
