@@ -52,14 +52,14 @@ dnl package checks, per config
 
 
 AC_CONFIG_FILES([
+External/SharpZipLib/src/icsharpcode.sharpzlib.pc
+External/SharpZipLib/src/Makefile
 Sharpen/sharpen.pc
 Sharpen/Makefile
 Sharpen.Test/sharpen.test.pc
 Sharpen.Test/Makefile
 Sharpen.Unix/sharpen.unix.pc
 Sharpen.Unix/Makefile
-External/SharpZipLib/src/icsharpcode.sharpzlib.pc
-External/SharpZipLib/src/Makefile
 NSch/nsch.pc
 NSch/Makefile
 NGit/ngit.pc
