@@ -1,5 +1,5 @@
 
-EXTRA_DIST =  expansions.m4 Dependencies/Mono.Posix.dll Dependencies/Mono.Security.dll
+EXTRA_DIST =  expansions.m4 Dependencies/nunit.framework.dll Dependencies/Mono.Posix.dll Dependencies/Mono.Security.dll
 
 #Warning: This is an automatically generated file, do not edit!
 if ENABLE_DEBUG

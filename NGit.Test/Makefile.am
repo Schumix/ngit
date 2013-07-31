@@ -46,6 +46,7 @@ PACK_E6D07037CBCF13376308A0A995D1FA48F8F76AAA_PACK_SOURCE=resources/global/pack-
 PACKED_REFS_SOURCE=resources/global/packed-refs
 PACK_HUGE_IDX_SOURCE=resources/global/pack-huge.idx
 TEST_STP_SOURCE=resources/global/excludeTest/src/test.stp
+NUNIT_FRAMEWORK_DLL_SOURCE=../Dependencies/nunit.framework.dll
 NGIT_DLL_SOURCE=../bin/NGit.dll
 NGIT_DLL_MDB_SOURCE=../bin/NGit.dll.mdb
 NGIT_DLL_MDB=$(BUILD_DIR)/NGit.dll.mdb
@@ -104,6 +105,7 @@ PACK_E6D07037CBCF13376308A0A995D1FA48F8F76AAA_PACK_SOURCE=resources/global/pack-
 PACKED_REFS_SOURCE=resources/global/packed-refs
 PACK_HUGE_IDX_SOURCE=resources/global/pack-huge.idx
 TEST_STP_SOURCE=resources/global/excludeTest/src/test.stp
+NUNIT_FRAMEWORK_DLL_SOURCE=../Dependencies/nunit.framework.dll
 NGIT_DLL_SOURCE=../bin/NGit.dll
 NGIT_DLL_MDB=
 SHARPEN_DLL_SOURCE=../bin/Sharpen.dll
@@ -121,6 +123,7 @@ SATELLITE_ASSEMBLY_NAME=$(notdir $(basename $(ASSEMBLY))).resources.dll
 
 PROGRAMFILES = \
 	$(NGIT_TEST_DLL_MDB) \
+	$(NUNIT_FRAMEWORK_DLL) \
 	$(NGIT_DLL) \
 	$(NGIT_DLL_MDB) \
 	$(SHARPEN_DLL) \
@@ -506,10 +509,10 @@ EXTRAS = \
 
 REFERENCES =  \
 	System \
-	System.Core \
-	$(NUNIT_LIBS)
+	System.Core
 
-DLL_REFERENCES = 
+DLL_REFERENCES =  \
+	../Dependencies/nunit.framework.dll
 
 CLEANFILES = $(PROGRAMFILES) $(PROGRAMFILES_RESOURCES_GLOBAL) $(PROGRAMFILES_RESOURCES_GLOBAL_EXCLUDETEST_SRC) $(LINUX_PKGCONFIG) 
 
@@ -544,6 +547,7 @@ PACK_E6D07037CBCF13376308A0A995D1FA48F8F76AAA_PACK = $(BUILD_DIR)/resources/glob
 PACKED_REFS = $(BUILD_DIR)/resources/global/packed-refs
 PACK_HUGE_IDX = $(BUILD_DIR)/resources/global/pack-huge.idx
 TEST_STP = $(BUILD_DIR)/resources/global/excludeTest/src/test.stp
+NUNIT_FRAMEWORK_DLL = $(BUILD_DIR)/nunit.framework.dll
 NGIT_DLL = $(BUILD_DIR)/NGit.dll
 SHARPEN_DLL = $(BUILD_DIR)/Sharpen.dll
 ICSHARPCODE_SHARPZIPLIB_DLL = $(BUILD_DIR)/ICSharpCode.SharpZipLib.dll
@@ -580,6 +584,7 @@ $(eval $(call emit-deploy-target,PACK_E6D07037CBCF13376308A0A995D1FA48F8F76AAA_P
 $(eval $(call emit-deploy-target,PACKED_REFS))
 $(eval $(call emit-deploy-target,PACK_HUGE_IDX))
 $(eval $(call emit-deploy-target,TEST_STP))
+$(eval $(call emit-deploy-target,NUNIT_FRAMEWORK_DLL))
 $(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL))
 $(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL_MDB))
 $(eval $(call emit-deploy-target,MONO_SECURITY_DLL))
