@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpen.Unix", "Sharpen.Uni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.SharpZLib", "External\SharpZipLib\src\ICSharpCode.SharpZLib.csproj", "{0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nunit.framework.Schumix", "External\nunit-framework\src\framework\nunit.framework.Schumix.csproj", "{6A281C98-B74D-403B-8536-966871B992E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mono.Libraries", "External\MonoLibraries\Mono.Libraries\Mono.Libraries.csproj", "{E9A655D1-EE99-467A-8F4B-CAC80E0E65BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A281C98-B74D-403B-8536-966871B992E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A281C98-B74D-403B-8536-966871B992E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A281C98-B74D-403B-8536-966871B992E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A281C98-B74D-403B-8536-966871B992E3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72944A6C-45FF-4EF8-B349-8C9CABF519D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{72944A6C-45FF-4EF8-B349-8C9CABF519D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72944A6C-45FF-4EF8-B349-8C9CABF519D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -49,6 +57,10 @@ Global
 		{E3BFF8B4-189C-496A-A817-7E8B31E22B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3BFF8B4-189C-496A-A817-7E8B31E22B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3BFF8B4-189C-496A-A817-7E8B31E22B91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9A655D1-EE99-467A-8F4B-CAC80E0E65BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9A655D1-EE99-467A-8F4B-CAC80E0E65BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9A655D1-EE99-467A-8F4B-CAC80E0E65BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9A655D1-EE99-467A-8F4B-CAC80E0E65BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = NGit\NGit.csproj

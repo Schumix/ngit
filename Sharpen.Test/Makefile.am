@@ -10,12 +10,15 @@ ASSEMBLY = ../bin/Sharpen.Test.dll
 ASSEMBLY_MDB = $(ASSEMBLY).mdb
 COMPILE_TARGET = library
 PROJECT_REFERENCES =  \
-	../bin/Sharpen.dll
+	../bin/Sharpen.dll \
+	../External/nunit-framework/bin/Debug/net-4.0/nunit.framework.dll
 BUILD_DIR = ../bin
 
 SHARPEN_TEST_DLL_MDB_SOURCE=../bin/Sharpen.Test.dll.mdb
 SHARPEN_TEST_DLL_MDB=$(BUILD_DIR)/Sharpen.Test.dll.mdb
-NUNIT_FRAMEWORK_DLL_SOURCE=../Dependencies/nunit.framework.dll
+NUNIT_FRAMEWORK_DLL_SOURCE=../External/nunit-framework/bin/Debug/net-4.0/nunit.framework.dll
+NUNIT_FRAMEWORK_DLL_MDB_SOURCE=../External/nunit-framework/bin/Debug/net-4.0/nunit.framework.dll.mdb
+NUNIT_FRAMEWORK_DLL_MDB=$(BUILD_DIR)/nunit.framework.dll.mdb
 
 endif
 
@@ -26,11 +29,13 @@ ASSEMBLY = ../bin/Sharpen.Test.dll
 ASSEMBLY_MDB = 
 COMPILE_TARGET = library
 PROJECT_REFERENCES =  \
-	../bin/Sharpen.dll
+	../bin/Sharpen.dll \
+	../External/nunit-framework/bin/Release/net-4.0/nunit.framework.dll
 BUILD_DIR = ../bin
 
 SHARPEN_TEST_DLL_MDB=
-NUNIT_FRAMEWORK_DLL_SOURCE=../Dependencies/nunit.framework.dll
+NUNIT_FRAMEWORK_DLL_SOURCE=../External/nunit-framework/bin/Release/net-4.0/nunit.framework.dll
+NUNIT_FRAMEWORK_DLL_MDB=
 
 endif
 
@@ -39,7 +44,8 @@ SATELLITE_ASSEMBLY_NAME=$(notdir $(basename $(ASSEMBLY))).resources.dll
 
 PROGRAMFILES = \
 	$(SHARPEN_TEST_DLL_MDB) \
-	$(NUNIT_FRAMEWORK_DLL)  
+	$(NUNIT_FRAMEWORK_DLL) \
+	$(NUNIT_FRAMEWORK_DLL_MDB)  
 
 LINUX_PKGCONFIG = \
 	$(SHARPEN_TEST_PC)  
@@ -64,8 +70,7 @@ EXTRAS = \
 REFERENCES =  \
 	System
 
-DLL_REFERENCES =  \
-	../Dependencies/nunit.framework.dll
+DLL_REFERENCES = 
 
 CLEANFILES = $(PROGRAMFILES) $(LINUX_PKGCONFIG) 
 
@@ -75,6 +80,7 @@ NUNIT_FRAMEWORK_DLL = $(BUILD_DIR)/nunit.framework.dll
 SHARPEN_TEST_PC = $(BUILD_DIR)/sharpen.test.pc
 
 $(eval $(call emit-deploy-target,NUNIT_FRAMEWORK_DLL))
+$(eval $(call emit-deploy-target,NUNIT_FRAMEWORK_DLL_MDB))
 $(eval $(call emit-deploy-wrapper,SHARPEN_TEST_PC,sharpen.test.pc))
 
 

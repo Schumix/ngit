@@ -1,3 +1,9 @@
 [submodule "External/SharpZipLib"]
 	path = External/SharpZipLib
 	url = git://github.com/Schumix/SharpZipLib.git
+[submodule "External/nunit-framework"]
+	path = External/nunit-framework
+	url = git://github.com/Schumix/nunit-framework.git
+[submodule "External/MonoLibraries"]
+	path = External/MonoLibraries
+	url = git://github.com/Schumix/MonoLibraries.git

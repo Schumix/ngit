@@ -26,7 +26,9 @@ ICSHARPCODE_SHARPZIPLIB_DLL_MDB=$(BUILD_DIR)/ICSharpCode.SharpZipLib.dll.mdb
 NSCH_DLL_SOURCE=../bin/NSch.dll
 NSCH_DLL_MDB_SOURCE=../bin/NSch.dll.mdb
 NSCH_DLL_MDB=$(BUILD_DIR)/NSch.dll.mdb
-MONO_SECURITY_DLL_SOURCE=../Dependencies/Mono.Security.dll
+MONO_LIBRARIES_DLL_SOURCE=../External/MonoLibraries/bin/Debug/Mono.Libraries.dll
+MONO_LIBRARIES_DLL_MDB_SOURCE=../External/MonoLibraries/bin/Debug/Mono.Libraries.dll.mdb
+MONO_LIBRARIES_DLL_MDB=$(BUILD_DIR)/Mono.Libraries.dll.mdb
 
 endif
 
@@ -49,7 +51,8 @@ ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../External/SharpZipLib/bin/Release/ICSharpCo
 ICSHARPCODE_SHARPZIPLIB_DLL_MDB=
 NSCH_DLL_SOURCE=../bin/NSch.dll
 NSCH_DLL_MDB=
-MONO_SECURITY_DLL_SOURCE=../Dependencies/Mono.Security.dll
+MONO_LIBRARIES_DLL_SOURCE=../External/MonoLibraries/bin/Release/Mono.Libraries.dll
+MONO_LIBRARIES_DLL_MDB=
 
 endif
 
@@ -64,7 +67,8 @@ PROGRAMFILES = \
 	$(ICSHARPCODE_SHARPZIPLIB_DLL_MDB) \
 	$(NSCH_DLL) \
 	$(NSCH_DLL_MDB) \
-	$(MONO_SECURITY_DLL)  
+	$(MONO_LIBRARIES_DLL) \
+	$(MONO_LIBRARIES_DLL_MDB)  
 
 LINUX_PKGCONFIG = \
 	$(NGIT_PC)  
@@ -645,12 +649,13 @@ include $(top_srcdir)/Makefile.include
 SHARPEN_DLL = $(BUILD_DIR)/Sharpen.dll
 ICSHARPCODE_SHARPZIPLIB_DLL = $(BUILD_DIR)/ICSharpCode.SharpZipLib.dll
 NSCH_DLL = $(BUILD_DIR)/NSch.dll
-MONO_SECURITY_DLL = $(BUILD_DIR)/Mono.Security.dll
+MONO_LIBRARIES_DLL = $(BUILD_DIR)/Mono.Libraries.dll
 NGIT_PC = $(BUILD_DIR)/ngit.pc
 
 $(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL))
 $(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL_MDB))
-$(eval $(call emit-deploy-target,MONO_SECURITY_DLL))
+$(eval $(call emit-deploy-target,MONO_LIBRARIES_DLL))
+$(eval $(call emit-deploy-target,MONO_LIBRARIES_DLL_MDB))
 $(eval $(call emit-deploy-wrapper,NGIT_PC,ngit.pc))
 
 
