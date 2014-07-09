@@ -24,8 +24,7 @@ COMPILING
 ---------
 The port depends on two external libraries:
   - ICSharpCode.SharpZipLib
-  - Mono.Security
-  - Mono.Posix (optional)
+  - Mono.Libraries
 
 If you are compiling with Mono then these libraries will be available in
 Mono's GAC. If you are compiling on Windows using the Microsoft .NET
