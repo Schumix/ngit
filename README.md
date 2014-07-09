@@ -1,4 +1,4 @@
-ABOUT NGIT [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Schumix/ngit/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+ABOUT NGIT [![Build Status](https://travis-ci.org/Schumix/ngit.png?branch=master)](https://travis-ci.org/Schumix/ngit) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Schumix/ngit/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 ----------
 
 NGit is a port of JGit [1] to C#. This port is generated semi-automatically
