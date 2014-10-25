@@ -53,8 +53,8 @@ dnl package checks, per config
 AC_CONFIG_FILES([
 External/SharpZipLib/src/icsharpcode.sharpzlib.pc
 External/SharpZipLib/src/Makefile
-External/nunit-framework/src/framework/nunit.framework.schumix.pc
-External/nunit-framework/src/framework/Makefile
+External/nunit-framework/src/NUnitFramework/framework/nunit.framework.schumix.pc
+External/nunit-framework/src/NUnitFramework/framework/Makefile
 External/MonoLibraries/Mono.Libraries/mono.libraries.pc
 External/MonoLibraries/Mono.Libraries/Makefile
 Sharpen/sharpen.pc

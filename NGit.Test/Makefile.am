@@ -13,7 +13,7 @@ PROJECT_REFERENCES =  \
 	../bin/NGit.dll \
 	../bin/Sharpen.dll \
 	../External/SharpZipLib/bin/Debug/ICSharpCode.SharpZipLib.dll \
-	../External/nunit-framework/bin/Debug/net-4.0/nunit.framework.dll
+	../External/nunit-framework/src/bin/Debug/net-4.0/nunit.framework.dll
 BUILD_DIR = ../bin
 
 NGIT_TEST_DLL_MDB_SOURCE=../bin/NGit.Test.dll.mdb
@@ -62,8 +62,8 @@ NSCH_DLL_MDB=$(BUILD_DIR)/NSch.dll.mdb
 MONO_LIBRARIES_DLL_SOURCE=../External/MonoLibraries/bin/Debug/Mono.Libraries.dll
 MONO_LIBRARIES_DLL_MDB_SOURCE=../External/MonoLibraries/bin/Debug/Mono.Libraries.dll.mdb
 MONO_LIBRARIES_DLL_MDB=$(BUILD_DIR)/Mono.Libraries.dll.mdb
-NUNIT_FRAMEWORK_DLL_SOURCE=../External/nunit-framework/bin/Debug/net-4.0/nunit.framework.dll
-NUNIT_FRAMEWORK_DLL_MDB_SOURCE=../External/nunit-framework/bin/Debug/net-4.0/nunit.framework.dll.mdb
+NUNIT_FRAMEWORK_DLL_SOURCE=../External/nunit-framework/src/bin/Debug/net-4.0/nunit.framework.dll
+NUNIT_FRAMEWORK_DLL_MDB_SOURCE=../External/nunit-framework/src/bin/Debug/net-4.0/nunit.framework.dll.mdb
 NUNIT_FRAMEWORK_DLL_MDB=$(BUILD_DIR)/nunit.framework.dll.mdb
 
 endif
@@ -78,7 +78,7 @@ PROJECT_REFERENCES =  \
 	../bin/NGit.dll \
 	../bin/Sharpen.dll \
 	../External/SharpZipLib/bin/Release/ICSharpCode.SharpZipLib.dll \
-	../External/nunit-framework/bin/Release/net-4.0/nunit.framework.dll
+	../External/nunit-framework/src/bin/Release/net-4.0/nunit.framework.dll
 BUILD_DIR = ../bin
 
 NGIT_TEST_DLL_MDB=
@@ -121,7 +121,7 @@ NSCH_DLL_SOURCE=../bin/NSch.dll
 NSCH_DLL_MDB=
 MONO_LIBRARIES_DLL_SOURCE=../External/MonoLibraries/bin/Release/Mono.Libraries.dll
 MONO_LIBRARIES_DLL_MDB=
-NUNIT_FRAMEWORK_DLL_SOURCE=../External/nunit-framework/bin/Release/net-4.0/nunit.framework.dll
+NUNIT_FRAMEWORK_DLL_SOURCE=../External/nunit-framework/src/bin/Release/net-4.0/nunit.framework.dll
 NUNIT_FRAMEWORK_DLL_MDB=
 
 endif

@@ -11,13 +11,13 @@ ASSEMBLY_MDB = $(ASSEMBLY).mdb
 COMPILE_TARGET = library
 PROJECT_REFERENCES =  \
 	../bin/Sharpen.dll \
-	../External/nunit-framework/bin/Debug/net-4.0/nunit.framework.dll
+	../External/nunit-framework/src/bin/Debug/net-4.0/nunit.framework.dll
 BUILD_DIR = ../bin
 
 SHARPEN_TEST_DLL_MDB_SOURCE=../bin/Sharpen.Test.dll.mdb
 SHARPEN_TEST_DLL_MDB=$(BUILD_DIR)/Sharpen.Test.dll.mdb
-NUNIT_FRAMEWORK_DLL_SOURCE=../External/nunit-framework/bin/Debug/net-4.0/nunit.framework.dll
-NUNIT_FRAMEWORK_DLL_MDB_SOURCE=../External/nunit-framework/bin/Debug/net-4.0/nunit.framework.dll.mdb
+NUNIT_FRAMEWORK_DLL_SOURCE=../External/nunit-framework/src/bin/Debug/net-4.0/nunit.framework.dll
+NUNIT_FRAMEWORK_DLL_MDB_SOURCE=../External/nunit-framework/src/bin/Debug/net-4.0/nunit.framework.dll.mdb
 NUNIT_FRAMEWORK_DLL_MDB=$(BUILD_DIR)/nunit.framework.dll.mdb
 
 endif
@@ -30,11 +30,11 @@ ASSEMBLY_MDB =
 COMPILE_TARGET = library
 PROJECT_REFERENCES =  \
 	../bin/Sharpen.dll \
-	../External/nunit-framework/bin/Release/net-4.0/nunit.framework.dll
+	../External/nunit-framework/src/bin/Release/net-4.0/nunit.framework.dll
 BUILD_DIR = ../bin
 
 SHARPEN_TEST_DLL_MDB=
-NUNIT_FRAMEWORK_DLL_SOURCE=../External/nunit-framework/bin/Release/net-4.0/nunit.framework.dll
+NUNIT_FRAMEWORK_DLL_SOURCE=../External/nunit-framework/src/bin/Release/net-4.0/nunit.framework.dll
 NUNIT_FRAMEWORK_DLL_MDB=
 
 endif
