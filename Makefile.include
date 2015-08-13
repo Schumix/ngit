@@ -70,10 +70,10 @@ programfilesdir = @libdir@/@PACKAGE@
 programfiles_DATA = $(PROGRAMFILES)
 programfilesresourcesglobalexcludetestsrcdir = @libdir@/@PACKAGE@/resources/global/excludeTest/src
 programfilesresourcesglobalexcludetestsrc_DATA = $(PROGRAMFILES_RESOURCES_GLOBAL_EXCLUDETEST_SRC)
-linuxpkgconfigdir = @libdir@/pkgconfig
-linuxpkgconfig_DATA = $(LINUX_PKGCONFIG)
 programfilesresourcesglobaldir = @libdir@/@PACKAGE@/resources/global
 programfilesresourcesglobal_DATA = $(PROGRAMFILES_RESOURCES_GLOBAL)
+linuxpkgconfigdir = @libdir@/pkgconfig
+linuxpkgconfig_DATA = $(LINUX_PKGCONFIG)
 
 
 # macros
